@@ -3,7 +3,7 @@
 
 """
 @author:Su
-@file:mobile.py
+@file:autozan_windows.py
 @time:2018/07/21
 """
 """
@@ -13,7 +13,7 @@ win10企业版1803
 chrome 68.0 64位，以及对应版本的chromedriver
 pycharm 2018.1社区版
 python 3.62
-使用前请补全config配置，位于第26行
+使用前请补全config配置
 """
 """
 可能遇到的问题:
