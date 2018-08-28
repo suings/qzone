@@ -61,3 +61,11 @@ print(browser.page_source)
 demo是用来测试selenium以及chromedriver是否安装配置成功的  
 demo中最重要的是chrome_options的4行。  
 然后chrome的使用和phantomjs基本没区别
+
+## PC版空间广告屏蔽规则(Adblocks Plus适用)
+```
+user.qzone.qq.com##.f-single.f-s-s > .f-single-top + *
+user.qzone.qq.com##.f-single-biz
+user.qzone.qq.com##.collet_box.fn_paipai
+user.qzone.qq.com###idQbossHotbar
+```
