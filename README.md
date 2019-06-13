@@ -62,10 +62,37 @@ demo是用来测试selenium以及chromedriver是否安装配置成功的
 demo中最重要的是chrome_options的4行。  
 然后chrome的使用和phantomjs基本没区别
 
-## PC版空间广告屏蔽规则(Adblocks Plus适用)
+## PC版空间屏蔽广告(需用Tampermonkey)
+
+[Qzone Adblock.user.js](Qzone Adblock.user.js)
+
+```js
+// ==UserScript==
+// @name        Qzone Adblock
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  try to take over the world!
+// @author       Su
+// @match        https://user.qzone.qq.com/*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+
+    // feed流广告
+    var feeds = document.getElementsByClassName("f-single f-s-s");
+    feeds = [...feeds];
+    feeds.map(e=>e.getElementsByClassName("f-single-top").length?e.remove():e);
+
+    // 右侧广告
+    document.getElementById("QM_Container_100005").remove();
+    document.getElementById("QM_Container_100002").remove();
+
+    // 左侧广告
+    document.getElementById("QM_Container_100006").remove();
+
+})();
 ```
-user.qzone.qq.com##.f-single.f-s-s > .f-single-top + *
-user.qzone.qq.com##.f-single-biz
-user.qzone.qq.com##.collet_box.fn_paipai
-user.qzone.qq.com###idQbossHotbar
-```
+
